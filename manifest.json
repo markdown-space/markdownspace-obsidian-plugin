@@ -1,0 +1,11 @@
+{
+	"id": "markdownspace-publish",
+	"name": "MarkdownSpace Publish",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Publish your notes to MarkdownSpace",
+	"author": "Vali Ventures",
+	"authorUrl": "https://vali.ventures",
+	"fundingUrl": "https://vali.ventures",
+	"isDesktopOnly": false
+}
