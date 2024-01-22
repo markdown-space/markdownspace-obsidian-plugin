@@ -2,7 +2,8 @@
 	import { activeProject, plugin, updates } from "../../../store";
 
 	async function selectProject(evt: Event) {
-		const target = evt.target as HTMLSelectElement;
+		const target = evt.target;
+		if (!(target instanceof HTMLSelectElement)) return;
 		const project_id = target.value;
 		const _plugin = $plugin;
 

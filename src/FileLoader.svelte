@@ -74,7 +74,8 @@
 	}
 
 	function toggleSelected(event: Event, file: MarkdownFile) {
-		const target = event.target as HTMLInputElement;
+		const target = event.target;
+		if (!(target instanceof HTMLInputElement)) return;
 		if (target.checked) {
             selectedFiles = [...selectedFiles, file];
 		} else {
@@ -85,7 +86,8 @@
 	}
 
 	function toggleAllSelected(event: Event) {
-		const target = event.target as HTMLInputElement;
+		const target = event.target;
+		if (!(target instanceof HTMLInputElement)) return;
 		if (target.checked) {
 			selectedFiles = files;
 		} else {
