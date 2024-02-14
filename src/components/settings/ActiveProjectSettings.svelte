@@ -36,7 +36,7 @@
 			on:change={updateSettings}
 		/>
 
-		<label for="project-url">Project URL</label>
+		<label for="project-url">Project slug</label>
 		<input
 			id="project-url"
 			type="text"
@@ -44,7 +44,7 @@
 			on:change={updateSettings}
 		/>
 
-		<label for="api-key">API Key</label>
+		<label for="api-key">API key</label>
 		<input
 			id="api-key"
 			type="password"
@@ -52,7 +52,7 @@
 			on:change={updateSettings}
 		/>
 
-		<label for="project-name">Project Name</label>
+		<label for="project-name">Project name</label>
 		<input
 			id="project-name"
 			type="text"
@@ -65,4 +65,5 @@
 	input {
 		margin-bottom: 1rem;
 	}
+	
 </style>

@@ -1,6 +1,5 @@
 <script lang="ts">
 	import FileLoader from "./FileLoader.svelte";
-	import ActiveDocument from "./ActiveDocument.svelte";
 	import ProjectFiles from "./ProjectFiles.svelte";
 	import Logo from "./assets/Logo.svelte";
 	import ProjectSettings from "./ProjectSettings.svelte";
@@ -11,25 +10,12 @@
 	<div class="logo-wrapper">
 		<Logo />
 	</div>
-	<h1>Markdownspace Obsidian Plugin!</h1>
-	<p>
-		Welcome to the Markdownspace Obsidian plugin! This plugin allows you to
-		publish your Obsidian notes to markdownspace.
-	</p>
-	<p>
-		To get started, you'll need to create a project on markdownspace. You
-		can do that by clicking the button below. Once you've created a project,
-		you'll need to configure the plugin with your project's ID, API_KEY, and
-		URL. You can find these values in the project settings page. Once you've
-		configured the plugin, you can publish your notes to markdownspace by
-		using the various buttons bellow.
-	</p>
+	<h1>Markdownspace</h1>
 	<a href="https://markdownspace.com" target="_blank">
 		<button>Open Markdownspace</button>
 	</a>
 	{#key $activeProject}
 		<ProjectSettings />
-		<ActiveDocument />
 		<ProjectFiles />
 		<FileLoader />
 	{/key}
@@ -51,6 +37,11 @@
 		display: flex;
 		justify-content: center;
 		align-items: flex-start;
+	}
+
+	a {
+		margin: auto;
+		margin-bottom: 1rem;
 	}
 
 	:global(.logo-wrapper svg) {

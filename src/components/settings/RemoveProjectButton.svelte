@@ -4,5 +4,5 @@
 </script>
 
 <button on:click={() =>removeProject($plugin.settings.selectedProjectIndex)}>
-    Delete Project
+    Remove
 </button>

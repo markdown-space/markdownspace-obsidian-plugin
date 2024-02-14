@@ -101,16 +101,13 @@
 </script>
 
 <div class="flex-col">
-	<h1>File Selector</h1>
+	<h1>File selector</h1>
 	<p>
-		This load documents so that you can publish them to markdownspace. If a document
+		This load documents from Obsidian so that you can publish them to markdownspace. If a document
 		already exists with the same name as the file path, the existing
 		markdownspace document will be updated instead of creating a new file.
 	</p>
-	<h2>
-		Start typing the path to the directory you want to retrieve documents from:
-	</h2>
-	<input type="text" bind:value={selectedPath} />
+	<input placeholder="Start typing the path to the directory you want to retrieve documents from:" type="text" bind:value={selectedPath} />
 	<p>{info}</p>
 	<div class="flex-row buttons">
 		<button class="icon-wrapper" on:click={publishSelected}>
