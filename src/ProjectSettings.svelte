@@ -6,7 +6,6 @@
 </script>
 
 <div class="flex-col">
-	<h1>Project Settings</h1>
     <ActiveProjectSelector />
     <ActiveProjectSettings />
     <div class="buttons">

@@ -16,10 +16,10 @@ import type { MarkdownspaceSettings } from "./src/types";
 const DEFAULT_SETTINGS: MarkdownspaceSettings = {
 	projects: [
 		{
-			api_key: "INSERT_API_KEY_HERE",
-			project_id: "INSERT_PROJECT_ID_HERE",
-			project_url: "INSERT_PROJECT_URL_HERE",
-			project_name: "INSERT_PROJECT_NAME_HERE",
+			api_key: "",
+			project_id: "",
+			project_url: "",
+			project_name: "",
 		}
 	] ,
 	selectedProjectIndex: 0,
@@ -27,7 +27,7 @@ const DEFAULT_SETTINGS: MarkdownspaceSettings = {
 
 addIcon("MDS", logo);
 
-export const VIEW_TYPE_MARKDOWNSPACE = "markdownspace-view";
+export const VIEW_TYPE_MARKDOWNSPACE = "markdownspace";
 
 export default class MarkdownSpacePlugin extends Plugin {
 	settings: MarkdownspaceSettings;
@@ -54,7 +54,18 @@ export default class MarkdownSpacePlugin extends Plugin {
 
 	async activateView() {
 		await this.saveSettings();
-		this.app.workspace.detachLeavesOfType(VIEW_TYPE_MARKDOWNSPACE);
+
+		//get any active markdownspace views
+		const activeMarkdownspaceViews = this.app.workspace
+			.getLeavesOfType(VIEW_TYPE_MARKDOWNSPACE)
+			.filter((leaf) => leaf.view instanceof MainWindowView);
+
+		//if there are any active markdownspace views, activate the first one
+		if (activeMarkdownspaceViews.length > 0) {
+			this.app.workspace.revealLeaf(activeMarkdownspaceViews[0]);
+			return;
+		}
+
 
 		await this.app.workspace.getRightLeaf(false).setViewState({
 			type: VIEW_TYPE_MARKDOWNSPACE,
@@ -91,11 +102,11 @@ class MainWindowView extends ItemView {
 	}
 
 	getViewType() {
-		return "markdownspace-view";
+		return "markdownspace";
 	}
 
 	getDisplayText() {
-		return "Markdownspace view";
+		return "Markdownspace";
 	}
 
 	async onOpen() {

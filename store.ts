@@ -24,9 +24,9 @@ export const activeProject = derived<any, MarkdownspaceProject>([plugin, updates
         else {
             //create a new project
             const new_project: MarkdownspaceProject = {
-                project_id: "INSERT-PROJECT-ID-HERE-" + Date.now(),
-                project_url: "INSERT-PROJECT-URL-HERE",
-                api_key: "INSERT-API-KEY-HERE",
+                project_id: "",
+                project_url: "",
+                api_key: "",
                 project_name: "NEW-PROJECT-" + Date.now(),
             }
             addProject(new_project);

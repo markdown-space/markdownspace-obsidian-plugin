@@ -99,7 +99,7 @@
 	onMount(resync);
 </script>
 
-<h1>Project Files:</h1>
+<h1>MarkdownSpace documents:</h1>
 <div class="flex-row">
 	<button class="icon-wrapper" on:click={resync}><Sync /></button>
 	<button class="icon-wrapper" on:click={deleteSelected}><Trash /></button>

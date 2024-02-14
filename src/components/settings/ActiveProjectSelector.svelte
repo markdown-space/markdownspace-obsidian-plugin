@@ -19,7 +19,7 @@
 	}
 </script>
 
-	<label for="project-id">Active Project</label>
+	<label for="project-id">Active project</label>
 	<select
 		id="project-selector"
 		on:change={selectProject}
